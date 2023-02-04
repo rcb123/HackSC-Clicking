@@ -15,6 +15,7 @@
 			"$components/*": ["./src/components/*"],
 			"$static/*": ["/*"],
 			"$images/*": ["/images/*"],
+			"$lib": ["./src/lib"],
   			"$lib/*":["./src/lib/*"],
 		}
 	}
