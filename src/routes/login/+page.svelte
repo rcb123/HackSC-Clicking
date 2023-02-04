@@ -1,34 +1,19 @@
 <script lang="ts">
     import { supabase } from '$lib/supabaseClient'
-	import { enhance } from '$app/forms';
 
   
     let loading = false
-	let email: string | null = null;
-	let password: string | null = null;
-  
-    const handleLogin = async () => {
-      try {
-        loading = true
-        const { error } = await supabase.auth.signInWithOtp({ email })
-        if (error) throw error
-        alert('Check your email for the login link!')
-      } catch (error) {
-        if (error instanceof Error) {
-          alert(error.message)
-        }
-      } finally {
-        loading = false
-      }
-    }
-
-
-
+	let success: boolean = false
+	let email: string | null;
+	let password: string | null;
+	let emailError: string | null = null;
+	let passwordError: string | null = null;
+	let signInError: string | null = null;
 
 	let validEmail: 'Email must be a valid email address' | 'Email is required' | 'Email must be less than 64 characters' | null = null;
 	let validPassword: 'Password must be at least 6 characters' | 'Password must be less than 32 characters' | 'Password is required' | null = null;
-
-	const isValidEmail = (email: string | null) => {
+  
+    const isValidEmail = (email: string | null) => {
 		// eslint-disable-next-line no-useless-escape
 		const format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		if (email) {
@@ -58,12 +43,48 @@
 			return 'Password is required';
 		}
 	};
-  </script>
+
+	const login = async () => {
+		success = false;
+		let validEmail = isValidEmail(email);
+		let validPassword = isValidPassword(password);
+		const validationError = validEmail || validPassword;
+
+		if (validationError) {
+			emailError = validEmail;
+			passwordError = validPassword;
+			return;
+		}
+
+		if (!email || !password) {
+			return;
+		}
+
+		const { data, error } = await supabase.auth.signInWithPassword({
+			email: email,
+			password: password
+		});
+
+		if (error) {
+			signInError = String(error)
+			return;
+		}
+
+		emailError = null;
+		passwordError = null;
+		success = true;
+		return;
+	};
+
+	$: if (success) {
+		window.location.href = ('/')
+	}
+</script>
 
 
 <div class="lg:container mx-auto h-[90vh] w-full p-8">
 	<form
-		
+		on:submit|preventDefault|trusted={login}
 		class="flex flex-col items-center w-full justify-center"
 	>
 		<h1 class="text-3xl font-medium text-center my-2">Login Here! 🍿</h1>
@@ -103,4 +124,9 @@
 			<button class="btn btn-primary w-full" type="submit">Log In</button>
 		</div>
 	</form>
+	{#if signInError}
+		<div class="mt-10 bg-slate-50 rounded-xl p-6 shadow-lg w-fit mx-auto">
+			<p class="text-lg text-center font-medium text-error">{signInError}</p>
+		</div>
+	{/if}
 </div>

@@ -31,7 +31,7 @@
 
 </script>
 
-<div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200">
+<div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200 ">
 	<div class="mx-auto h-fit w-[75vw] bg-white px-6 py-6 rounded-xl shadow-xl">
 		<!-- Top div with user avatar and name -->
 		<div class="flex flex-row items-center mb-4">
