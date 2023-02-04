@@ -1,10 +1,11 @@
 <script lang="ts">
     import { supabase } from '$lib/supabaseClient'
-    import Button from "./Button.svelte"
+	import { enhance } from '$app/forms';
+
   
     let loading = false
-    let email: string
-    let password: string
+	let email: string | null = null;
+	let password: string | null = null;
   
     const handleLogin = async () => {
       try {
@@ -20,35 +21,86 @@
         loading = false
       }
     }
+
+
+
+
+	let validEmail: 'Email must be a valid email address' | 'Email is required' | 'Email must be less than 64 characters' | null = null;
+	let validPassword: 'Password must be at least 6 characters' | 'Password must be less than 32 characters' | 'Password is required' | null = null;
+
+	const isValidEmail = (email: string | null) => {
+		// eslint-disable-next-line no-useless-escape
+		const format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		if (email) {
+			if (!email?.match(format)) {
+				return 'Email must be a valid email address';
+			}
+			if (email?.length < 1) {
+				return 'Email is required';
+			}
+			if (email?.length > 64) {
+				return 'Email must be less than 64 characters';
+			}
+			return null;
+		} else return 'Email is required';
+	};
+
+	const isValidPassword = (password: string | null) => {
+		if (password) {
+			if (password?.length < 6) {
+				return 'Password must be at least 6 characters';
+			} else if (password?.length > 32) {
+				return 'Password must be less than 32 characters';
+			} else {
+				return null;
+			}
+		} else {
+			return 'Password is required';
+		}
+	};
   </script>
 
-  <div class="flex h-[90vh] bg-slate-200">
-	<div
-		class="bg-white m-auto w-[75vw] max-w-2xl shadow-xl rounded-2xl px-10 py-10 overflow-auto"
+
+<div class="lg:container mx-auto h-full w-full p-8">
+	<form
+		
+		class="flex flex-col items-center w-full justify-center"
 	>
-		<h1 class="text-3xl text-center mb-[3%] tracking-wide font-semibold">Login Here! 🍿</h1>
-        <div class="text-justify">
-            <form class="row flex-center flex" on:submit|preventDefault="{handleLogin}">
-                <div class="col-6 form-widget">
-                    <h1 class="header">Email:</h1>
-                    <!-- <p class="description">Sign in via magic link with your email below</p> -->
-                    <div>
-                        <input class="inputField" type="email" placeholder="Your email" bind:value="{email}" />
-                    </div>
-
-                    <h1 class="header">Password:</h1>
-                    <!-- <p class="description">Sign in via magic link with your email below</p> -->
-                    <div>
-                        <input class="inputField" type="password" placeholder="Your password" bind:value="{password}" />
-                    </div>
-
-                    <div>
-                        <!-- <input type="submit" class="button block" value={loading ? 'Loading' : 'Send magic link'}
-                        disabled={loading} /> -->
-                        <button class="button">Login</button>
-                    </div>
-                </div>
-            </form>
-    </div>
-	</div>
+		<h1 class="text-3xl font-medium text-center my-2">Login Here! 🍿</h1>
+		<div class="form-control w-full max-w-xs">
+			<label for="email" class="label">
+				<span class="label-text">Email</span>
+			</label>
+			<input
+				type="email"
+				name="email"
+				class="input w-full max-w-xs {validEmail ? 'input-error' : 'input-bordered'}"
+				bind:value={email}
+			/>
+			<label for="email" class="label">
+				{#if validEmail}
+					<span class="label-text-alt text-error">{validEmail}</span>
+				{/if}
+			</label>
+		</div>
+		<div class="form-control w-full max-w-xs">
+			<label for="password" class="label">
+				<span class="label-text">Password</span>
+			</label>
+			<input
+				type="password"
+				name="password"
+				class="input w-full max-w-xs {validPassword ? 'input-error' : 'input-bordered'}"
+				bind:value={password}
+			/>
+			<label for="password" class="label">
+				{#if validPassword}
+					<span class="label-text-alt text-error">{validPassword}</span>
+				{/if}
+			</label>
+		</div>
+        <div class="w-full max-w-xs">
+			<button class="btn btn-primary w-full" type="submit">Log In</button>
+		</div>
+	</form>
 </div>
