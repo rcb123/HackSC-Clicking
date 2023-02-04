@@ -97,12 +97,12 @@
 	};
 </script>
 
-<div class="lg:container mx-auto pt-24 h-[90vh] w-full p-8">
+<div class="lg:container mx-auto pt-[5%] h-[90vh] w-full p-8">
 	<form
 		on:submit|preventDefault={signup}
 		class="flex flex-col items-center w-full justify-center"
 	>
-		<h1 class="text-3xl font-medium text-center my-2">Register</h1>
+		<h1 class="text-3xl font-medium text-center my-2">Sign Up</h1>
 		<div class="form-control w-full max-w-xs">
 			<label for="email" class="label">
 				<span class="label-text">Email</span>

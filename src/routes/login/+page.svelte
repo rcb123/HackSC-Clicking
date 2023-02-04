@@ -61,7 +61,7 @@
   </script>
 
 
-<div class="lg:container mx-auto h-full w-full p-8">
+<div class="lg:container mx-auto h-[90vh] w-full p-8">
 	<form
 		
 		class="flex flex-col items-center w-full justify-center"
