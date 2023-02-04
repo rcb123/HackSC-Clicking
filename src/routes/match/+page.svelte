@@ -1,5 +1,5 @@
-<div class="flex h-screen bg-slate-200">
-	<div class="flex flex-row justify-center mx-auto my-auto align-center">
+<div class="flex h-[90vh] bg-slate-200">
+	<div class="flex flex-row justify-center m-auto align-center">
 		<div class="card w-96 bg-base-100 shadow-xl">
 			<figure>
 				<img
