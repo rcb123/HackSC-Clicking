@@ -9,17 +9,17 @@
 
 <div class="btm-nav">
 	<a href="/">
-		<button class="btn rounded-none w-full h-full text-2xl">
+		<button class="btn btn-link rounded-none w-full h-full text-3xl">
 			<Icon icon="mdi:home" />
 		</button>
 	</a>
 	<a href="/match">
-		<button class="btn rounded-none w-full h-full text-2xl">
+		<button class="btn btn-link rounded-none w-full h-full text-3xl">
 			<Icon icon="mdi:movie-open" />
 		</button>
 	</a>
 	<a href="/account">
-		<button class="btn rounded-none w-full h-full text-2xl">
+		<button class="btn btn-link rounded-none w-full h-full text-3xl">
             <Icon icon="mdi:user" />
 		</button>
 	</a>
