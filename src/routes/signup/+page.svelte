@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
 	import { supabase } from '$lib/supabaseClient';
 
 	let email: string | null = null;
@@ -98,7 +97,7 @@
 	};
 </script>
 
-<div class="lg:container mx-auto h-full w-full p-8">
+<div class="lg:container mx-auto pt-24 h-[90vh] w-full p-8">
 	<form
 		on:submit|preventDefault={signup}
 		class="flex flex-col items-center w-full justify-center"

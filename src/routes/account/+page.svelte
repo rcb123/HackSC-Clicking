@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { supabase } from '$lib/supabaseClient';
+
 	import MovieCard from '$components/MovieCard.svelte';
 	let username = 'User1';
 
@@ -21,9 +23,15 @@
 				'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/4c177c2b7f7bb9a679f089bcb50f844e_3e89eb5d-ffbd-4033-a00f-e595a3ef2e2a_240x360_crop_center.progressive.jpg?v=1573587540'
 		}
 	];
+
+	const signOut = async () => {
+    	await supabase.auth.signOut()
+    	window.location.href = '/';
+	}
+
 </script>
 
-<div class="flex h-[90vh] pt-[5%] bg-slate-200">
+<div class="flex h-[100%-10vh] pt-[5%] bg-slate-200">
 	<div class="mx-auto h-fit w-[75vw] bg-white px-6 py-6 rounded-xl shadow-xl">
 		<!-- Top div with user avatar and name -->
 		<div class="flex flex-row items-center mb-4">
@@ -33,6 +41,7 @@
 				</div>
 			</div>
 			<h1 class="text-2xl ml-4">Welcome back {username}</h1>
+			<button class="btn ml-auto" on:click={signOut}>Sign Out</button>
 		</div>
 		<!-- Middle div with movie cards -->
 		<div>
