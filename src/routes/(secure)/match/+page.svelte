@@ -1,10 +1,13 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition';
 	let matched: boolean = false;
-	let first: boolean = true;
+	let count: string = 'first';
 
 	function dislike_clicked() {
-		first = false;
+		count = 'second';
+	}
+
+	function endCards() {
+		count = 'third';
 	}
 
 	function liked() {
@@ -13,7 +16,7 @@
 </script>
 
 {#if !matched}
-	{#if first}
+	{#if count == 'first'}
 		<div class="flex h-[90vh]">
 			<div class="flex flex-row justify-center m-auto align-center">
 				<div class="card max-w-sm shadow-xl bg-base-100 border">
@@ -44,7 +47,7 @@
 				</div>
 			</div>
 		</div>
-	{:else}
+	{:else if count == 'second'}
 		<div class="flex h-[90vh]">
 			<div class="flex flex-row justify-center m-auto align-center">
 				<div class="card max-w-sm shadow-xl bg-base-100 border">
@@ -68,12 +71,20 @@
 						</p>
 						<div class="card-actions justify-between mt-4">
 							<button class="btn btn-lg btn-success w-28" on:click={liked}>Like</button>
-							<button
-								class="btn btn-lg btn-error w-28 bg-gray-300 border-none"
-								on:click={dislike_clicked}>Dislike</button
+							<button class="btn btn-lg btn-error w-28 bg-gray-300 border-none" on:click={endCards}
+								>Dislike</button
 							>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	{:else}
+		<div class="flex h-[90vh]">
+			<div class="flex flex-col justify-center m-auto align-center">
+				<div class="text-center bg-base-100 border rounded-xl p-20 shadow-lg">
+					<p class="text-4xl text-error mb-10">No More Matches!</p>
+					<p class="text-xl">Come back again tomorrow</p>
 				</div>
 			</div>
 		</div>
