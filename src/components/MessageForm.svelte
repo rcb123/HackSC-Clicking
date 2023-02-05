@@ -59,7 +59,7 @@
 	});
 </script>
 
-<form on:submit|preventDefault={handleSendMsg} class="flex flex-row">
+<form on:submit|preventDefault={handleSendMsg} class="flex flex-row w-[98%]">
 	<input
 		placeholder="Enter a new message"
 		class="rounded-lg px-2 py-1 mr-2 w-full input"
@@ -69,7 +69,7 @@
 	<button
 		type="submit"
 		disabled={loading}
-		class="btn btn-primary px-2 py-1 rounded-lg"
+		class="btn btn-success px-2 py-1 rounded-lg w-[20%]"
 	>
 		{loading ? 'Sending...' : 'Send'}
 	</button>
