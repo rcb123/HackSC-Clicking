@@ -100,6 +100,8 @@
 			window.location.href = '/';
 		}
 	}
+
+
 </script>
 
 <div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200 ">
@@ -134,7 +136,7 @@
 					<button class="btn">Create new cards</button>
 				</a>
 				<a href="/edit">
-					<button class="btn" on:click={edit}>Edit your cards</button>
+					<button class="btn">Edit your cards</button>
 				</a>
 				<button class="btn">Update your profile</button>
 			</div>
