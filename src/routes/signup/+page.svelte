@@ -104,10 +104,10 @@
 		on:submit|preventDefault={signup}
 		class="flex flex-col items-center w-full justify-center"
 	>
-		<h1 class="text-3xl font-medium text-center my-2">Sign Up</h1>
+		<h1 class="text-3xl my-2 font-extrabold">Sign Up</h1>
 		<div class="form-control w-full max-w-xs">
 			<label for="email" class="label">
-				<span class="label-text">Email</span>
+				<span class="label-text font-semibold">Email</span>
 			</label>
 			<input
 				type="email"
@@ -123,7 +123,7 @@
 		</div>
 		<div class="form-control w-full max-w-xs">
 			<label for="password" class="label">
-				<span class="label-text">Password</span>
+				<span class="label-text font-semibold">Password</span>
 			</label>
 			<input
 				type="password"
@@ -139,7 +139,7 @@
 		</div>
 		<div class="form-control w-full max-w-xs">
 			<label for="passwordConfirm" class="label">
-				<span class="label-text">Confirm Password</span>
+				<span class="label-text font-semibold">Confirm Password</span>
 			</label>
 			<input
 				type="password"
@@ -163,7 +163,7 @@
 					class="checkbox checkbox-primary {acceptedTerms ? 'border-error' : ''}"
 					bind:value={terms}
 				/>
-				<span class="label-text">I accept the terms and conditions</span>
+				<span class="label-text font-semibold">I accept the terms and conditions</span>
 			</label>
 			<label for="terms" class="label">
 				{#if acceptedTerms}
@@ -182,3 +182,9 @@
 		</div>
 	{/if}
 </div>
+
+<style>
+	* {
+		font-family: Overpass;
+	}
+</style>
