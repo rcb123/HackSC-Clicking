@@ -1,13 +1,16 @@
 <script lang="ts">
     import { supabase } from '$lib/supabaseClient'
-	import { enhance } from '$app/forms';
 
-    let comment = '';
-    let counterColor = comment.length > 100 ? 'red' : '';
+	let movieName: string = '';
+	let movieDesc: string = '';
+	let movieURL: string = '';
+
+    let comment: string = '';
+    let counterColor: string = '';
 
 
-    function wordCounter() {
-        comment = comment.trim();
+    $: {
+        comment = movieDesc.trim();
         counterColor = comment.length > 100 ? 'red' : '';
     }
     
@@ -38,26 +41,20 @@
 			<textarea
 				name="description"
                 id="description"
-				class="w-full max-w-xs rounded-lg"
+				class="w-full max-w-xs rounded-lg input input-lg h-24"
                 rows="4"
-                bind:value={comment}
-                on:input={wordCounter}
+                bind:value={movieDesc}
 			></textarea>
             <div id="counter" class="text-right" style="color: {counterColor}">{comment.length} / 100</div>
 			<label for="description" class="label">
 			</label>
 		</div>
         <div class="form-control w-full max-w-xs">
-			<label for="movie-image" class="label">
-				<span class="label-text">Image:</span>
+			<label for="movie-url" class="label">
+				<span class="label-text">Cover URL:</span>
 			</label>
-			<input
-				type="file"
-				name="movie-image"
-				class="w-full max-w-xs"
-			/>
-			<label for="movie-image" class="label">
-			</label>
+			<input name="movie-url" class="input w-full max-w-xs" bind:value={movieURL} />
+			<label for="movie-url" class="label" />
 		</div>
 
         <div class="w-full max-w-xs">

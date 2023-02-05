@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { supabase } from '$lib/supabaseClient';
 	import { page } from '$app/stores';
-	import { error } from '@sveltejs/kit';
 
 	let movieName: string = '';
 	let movieDesc: string = '';
@@ -14,7 +13,7 @@
 
 	let counterColor = movieDesc.length > 100 ? 'red' : '';
 
-	function wordCounter() {
+	$: {
 		comment = movieDesc.trim();
 		counterColor = comment.length > 100 ? 'red' : '';
 	}
@@ -84,7 +83,6 @@
 				class="w-full max-w-xs rounded-lg input input-lg h-24"
 				rows="4"
 				bind:value={movieDesc}
-				on:input={wordCounter}
 			/>
 			<div id="counter" class="text-right" style="color: {counterColor}">
 				{movieDesc.length} / 100
