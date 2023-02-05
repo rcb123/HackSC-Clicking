@@ -25,7 +25,7 @@
 				'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/108b520c55e3c9760f77a06110d6a73b_240x360_crop_center.progressive.jpg?v=1573652543'
 		},
 		{
-			name: 'Movie2',
+			name: 'Dunkirk',
 			desc: 'Although I was confused by it at first, I have come to recognize the complexity of the film with its jump cuts transitioning from scene to scene with a weird (but good) sense of time usage.',
 			cover:
 				'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/4c177c2b7f7bb9a679f089bcb50f844e_3e89eb5d-ffbd-4033-a00f-e595a3ef2e2a_240x360_crop_center.progressive.jpg?v=1573587540'
