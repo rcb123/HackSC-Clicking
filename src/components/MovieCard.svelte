@@ -4,7 +4,7 @@
     export let movieCover: string;
 </script>
 
-<div class="card w-[23vw] bg-base-100 shadow-xl mb-4">
+<div class="card w-[23vw] bg-base-100 shadow-xl border mb-4">
     <figure>
         <img
             src={movieCover}

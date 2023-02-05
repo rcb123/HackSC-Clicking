@@ -38,7 +38,7 @@
 			<textarea
 				name="description"
                 id="description"
-				class="w-full max-w-xs"
+				class="w-full max-w-xs rounded-lg"
                 rows="4"
                 bind:value={comment}
                 on:input={wordCounter}
