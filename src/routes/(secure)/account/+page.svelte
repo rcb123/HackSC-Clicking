@@ -100,14 +100,6 @@
 			window.location.href = '/';
 		}
 	}
-
-	const create = async () => {
-		window.location.href = '/create';
-	};
-
-	const edit = async () => {
-		window.location.href = '/edit';
-	};
 </script>
 
 <div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200 ">
