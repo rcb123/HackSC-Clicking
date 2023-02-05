@@ -66,8 +66,8 @@
 				/>
 			</figure>
 			<div class="card-body">
-				<h2 class="card-title">Movie</h2>
-				<p>Movie Description</p>
+				<h2 class="card-title">Interstellar</h2>
+				<p>I like it!!!</p>
 				<div class="card-actions justify-between mt-4">
 					<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>
 					<button class="btn btn-lg btn-error">Dislike</button> -->
@@ -87,8 +87,8 @@
 				/>
 			</figure>
 			<div class="card-body">
-				<h2 class="card-title">Movie</h2>
-				<p>Movie Description</p>
+				<h2 class="card-title">Interstellar</h2>
+				<p>I LOVE THIS MOVIE!!!!!!!!!!!!!!!!!!!</p>
 				<div class="card-actions justify-between mt-4">
 					<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>
 					<button class="btn btn-lg btn-error">Dislike</button> -->

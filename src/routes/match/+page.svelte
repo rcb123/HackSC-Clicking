@@ -21,9 +21,9 @@
 				<p>Movie Description</p>
 				<div class="card-actions justify-between mt-4">
 					<a href="/liked">
-						<button class="btn btn-lg btn-success">Like</button>
+						<button class="btn btn-lg btn-success w-28">Like</button>
 					</a>
-					<button class="btn btn-lg btn-error" on:click={dislike_clicked}>Dislike</button>
+					<button class="btn btn-lg btn-error w-28" on:click={dislike_clicked}>Dislike</button>
 				</div>
 			</div>
 		</div>
