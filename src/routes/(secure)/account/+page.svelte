@@ -100,6 +100,14 @@
 			window.location.href = '/';
 		}
 	}
+
+	const create = async () => {
+    	window.location.href = '/create';
+	}
+
+    const edit = async () => {
+    	window.location.href = '/edit';
+	}
 </script>
 
 <div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200 ">
@@ -130,8 +138,8 @@
 		</div>
 		<!-- Bottom div with edit/update buttons -->
 		<div>
-			<button class="btn">Create new cards</button>
-			<button class="btn">Edit your cards</button>
+			<button class="btn" on:click={create}>Create new cards</button>
+            <button class="btn" on:click={edit}>Edit your cards</button>
 			<button class="btn">Update your profile</button>
 		</div>
 
