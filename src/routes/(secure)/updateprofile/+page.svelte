@@ -35,6 +35,9 @@
     console.log(session);
 </script>
 
+<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
+<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180" src="./vector_1.png" alt=""/>
+
 <div class="h-[90vh] w-full bg-slate-200">
 	<div class="h-full mx-auto pt-[20vh] w-[30vw] ">
 		<div>
@@ -51,7 +54,7 @@
 					type="text"
 					value={session.user.email}
 					disabled
-					class="input input-bordered w-full"
+					class="border-yellow-500 input input-bordered w-full"
 				/>
 			</div>
 
@@ -61,7 +64,7 @@
 					id="username"
 					type="text"
 					bind:value={username}
-					class="input input-bordered w-full"
+					class="border-yellow-500 input input-bordered w-full"
 				/>
 			</div>
 
@@ -71,14 +74,14 @@
 					id="avatar_url"
 					type="text"
 					bind:value={avatarURL}
-					class="input input-bordered w-full"
+					class="border-yellow-500 input input-bordered w-full"
 				/>
 			</div>
 
 			<div class="my-4 w-[30vw]">
 				<input
 					type="submit"
-					class="btn btn-block btn-primary"
+					class="btn w-full bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100"
 					value={loading ? 'Loading...' : 'Update'}
 					disabled={loading}
 				/>
