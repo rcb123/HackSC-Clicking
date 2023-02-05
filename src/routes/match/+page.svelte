@@ -11,11 +11,8 @@
 </style>
 
 <div class="flex h-[90vh] bg-slate-200">
-	<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
-	<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180" src="./vector_1.png" alt=""/>
-
 	<div class="flex flex-row justify-center m-auto align-center">
-		<div class="card w-96 bg-base-100 shadow-xl bg-yellow-100">
+		<div class="card w-96 shadow-xl bg-yellow-100">
 			<figure>
 				<img
 					id="display_card"

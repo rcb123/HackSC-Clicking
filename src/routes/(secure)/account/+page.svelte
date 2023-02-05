@@ -78,9 +78,6 @@
 	}
 </script>
 
-<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
-<!-- <img class="absolute max-w-lg right-0 -bottom-[55vh] rotate-180" src="./vector_1.png" alt=""/> -->
-
 <div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200">
 
 	{#if loading}
@@ -96,7 +93,7 @@
 						<img src={avatarUrl} alt="avatar" />
 					</div>
 				</div>
-				<h1 class="text-2xl ml-4">Welcome back {username}</h1>
+				<h1 class="text-2xl ml-4">Welcome Back: {username}</h1>
 				<button class="btn ml-auto" on:click={signOut} disabled={loading}>Sign Out</button>
 			</div>
 			<!-- Middle div with movie cards -->
