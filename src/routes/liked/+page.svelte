@@ -48,24 +48,27 @@
 </style>
 
 <div>
+	<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
+	<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180" src="./vector_1.png" alt=""/>
+
     <h1 class="text-3xl text-center mb-[0%] pt-7 pb-0 tracking-wide font-semibold">It's a match!</h1>
 </div>
 <div class="w-full text-center mt-3">
     <a class="" href="/">
-        <button class="btn btn-primary">Chat Now!</button>
+        <button class="btn bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100">Chat Now!</button>
     </a>
 </div>
 
 <div class="flex h-[60vh] bg-slate-200">
 	<div class="flex flex-row justify-center m-auto align-center">
 		<div class="card w-96 bg-base-100 shadow-xl">
-			<figure>
+			<figure class="bg-yellow-100">
 				<img
 					src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg"
 					alt="Movie Cover"
 				/>
 			</figure>
-			<div class="card-body">
+			<div class="card-body bg-yellow-100">
 				<h2 class="card-title">Interstellar</h2>
 				<p>I like it!!!</p>
 				<div class="card-actions justify-between mt-4">
@@ -80,13 +83,13 @@
 
 	<div class="flex flex-row justify-center m-auto align-center">
 		<div class="card w-96 bg-base-100 shadow-xl">
-			<figure>
+			<figure class="bg-yellow-100">
 				<img
 					src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg"
 					alt="Movie Cover"
 				/>
 			</figure>
-			<div class="card-body">
+			<div class="card-body bg-yellow-100">
 				<h2 class="card-title">Interstellar</h2>
 				<p>I LOVE THIS MOVIE!!!!!!!!!!!!!!!!!!!</p>
 				<div class="card-actions justify-between mt-4">

@@ -121,7 +121,7 @@
 			<input
 				type="email"
 				name="email"
-				class="input w-full max-w-xs {validEmail ? 'input-error' : 'input-bordered'}"
+				class="border-yellow-500 input w-full max-w-xs {validEmail ? 'input-error' : 'input-bordered'}"
 				bind:value={email}
 			/>
 			<label for="email" class="label">
@@ -137,7 +137,7 @@
 			<input
 				type="password"
 				name="password"
-				class="input w-full max-w-xs {validPassword ? 'input-error' : 'input-bordered'}"
+				class="border-yellow-500 input w-full max-w-xs {validPassword ? 'input-error' : 'input-bordered'}"
 				bind:value={password}
 			/>
 			<label for="password" class="label">
@@ -153,7 +153,7 @@
 			<input
 				type="password"
 				name="passwordConfirm"
-				class="input w-full max-w-xs {passwordMatch
+				class="border-yellow-500 input w-full max-w-xs {passwordMatch
 					? 'input-error'
 					: 'input-bordered'}"
 				bind:value={passwordConfirm}
@@ -181,7 +181,7 @@
 			</label>
 		</div>
 		<div class="w-full max-w-xs">
-			<input class="btn btn-primary w-full" type="submit" disabled={loading} value={loading ? 'Loading...' : 'Register'}/>
+			<input class="btn w-full bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100" type="submit" disabled={loading} value={loading ? 'Loading...' : 'Register'}/>
 		</div>
 	</form>
 	{#if status == 200}

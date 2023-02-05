@@ -6,8 +6,11 @@
 </script>
 
 <div class="flex h-[90vh] bg-slate-200">
+	<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
+	<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180" src="./vector_1.png" alt=""/>
+
 	<div class="flex flex-row justify-center m-auto align-center">
-		<div class="card w-96 bg-base-100 shadow-xl">
+		<div class="card w-96 bg-base-100 shadow-xl bg-yellow-100">
 			<figure>
 				<img
 					id="display_card"
@@ -16,7 +19,7 @@
 					class="max-h-64"
 				/>
 			</figure>
-			<div class="card-body">
+			<div class="card-body bg-yellow-100">
 				<h2 class="card-title">Movie</h2>
 				<p>Movie Description</p>
 				<div class="card-actions justify-between mt-4">

@@ -83,11 +83,15 @@
 
 
 <div class="lg:container mx-auto h-[90vh] w-full p-8">
+	<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
+	<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180" src="./vector_1.png" alt=""/>
+
 	<form
 		on:submit|preventDefault|trusted={login}
 		class="flex flex-col items-center w-full justify-center"
 	>
-		<h1 class="text-3xl my-2 font-extrabold">Login Here! 🍿</h1>
+		<h1 class="text-3xl my-2 font-extrabold">WELCOME BACK! 🍿</h1>
+		<p>Don't have an account? <a href="/signup" class="link link-warning font-bold!important">Sign up here.</a></p>
 		<div class="form-control w-full max-w-xs">
 			<label for="email" class="label">
 				<span class="label-text font-semibold">Email</span>
@@ -95,7 +99,7 @@
 			<input
 				type="email"
 				name="email"
-				class="input w-full max-w-xs {validEmail ? 'input-error' : 'input-bordered'}"
+				class="border-yellow-500 input w-full max-w-xs {validEmail ? 'input-error' : 'input-bordered'}"
 				bind:value={email}
 			/>
 			<label for="email" class="label">
@@ -111,7 +115,7 @@
 			<input
 				type="password"
 				name="password"
-				class="input w-full max-w-xs {validPassword ? 'input-error' : 'input-bordered'}"
+				class="border-yellow-500 input w-full max-w-xs {validPassword ? 'input-error' : 'input-bordered'}"
 				bind:value={password}
 			/>
 			<label for="password" class="label">
@@ -121,7 +125,7 @@
 			</label>
 		</div>
         <div class="w-full max-w-xs">
-			<button class="btn btn-primary w-full" type="submit">Log In</button>
+			<button class="btn w-full bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100" type="submit">Log In</button>
 		</div>
 	</form>
 	{#if signInError}
