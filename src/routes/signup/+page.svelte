@@ -8,9 +8,20 @@
 	let status: number | null = null;
 	let loading: boolean = false;
 
-	let validEmail: 'Email must be a valid email address' | 'Email is required' | 'Email must be less than 64 characters' | null = null;
-	let validPassword: 'Password must be at least 6 characters' | 'Password must be less than 32 characters' | 'Password is required' | null = null;
-	let passwordMatch: 'Confirm Password is required' | 'Password and Confirm Password must match' | null = null;
+	let validEmail:
+		| 'Email must be a valid email address'
+		| 'Email is required'
+		| 'Email must be less than 64 characters'
+		| null = null;
+	let validPassword:
+		| 'Password must be at least 6 characters'
+		| 'Password must be less than 32 characters'
+		| 'Password is required'
+		| null = null;
+	let passwordMatch:
+		| 'Confirm Password is required'
+		| 'Password and Confirm Password must match'
+		| null = null;
 	let acceptedTerms: 'You must accept the terms before proceeding' | null = null;
 
 	const isValidEmail = (email: string | null) => {
@@ -97,22 +108,14 @@
 		password = null;
 		passwordConfirm = null;
 		terms = false;
-		status = 200
+		status = 200;
 		loading = false;
 		return;
 	};
-
-	
 </script>
 
 <div class="lg:container mx-auto pt-[5%] h-[90vh] w-full p-8">
-	<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
-	<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180" src="./vector_1.png" alt=""/>
-
-	<form
-		on:submit|preventDefault={signup}
-		class="flex flex-col items-center w-full justify-center"
-	>
+	<form on:submit|preventDefault={signup} class="flex flex-col items-center w-full justify-center">
 		<h1 class="text-3xl my-2 font-extrabold">Sign Up</h1>
 		<div class="form-control w-full max-w-xs">
 			<label for="email" class="label">
@@ -121,7 +124,9 @@
 			<input
 				type="email"
 				name="email"
-				class="border-yellow-500 input w-full max-w-xs {validEmail ? 'input-error' : 'input-bordered'}"
+				class="border-yellow-500 input w-full max-w-xs {validEmail
+					? 'input-error'
+					: 'input-bordered'}"
 				bind:value={email}
 			/>
 			<label for="email" class="label">
@@ -137,7 +142,9 @@
 			<input
 				type="password"
 				name="password"
-				class="border-yellow-500 input w-full max-w-xs {validPassword ? 'input-error' : 'input-bordered'}"
+				class="border-yellow-500 input w-full max-w-xs {validPassword
+					? 'input-error'
+					: 'input-bordered'}"
 				bind:value={password}
 			/>
 			<label for="password" class="label">
@@ -181,7 +188,12 @@
 			</label>
 		</div>
 		<div class="w-full max-w-xs">
-			<input class="btn w-full bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100" type="submit" disabled={loading} value={loading ? 'Loading...' : 'Register'}/>
+			<input
+				class="btn w-full bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100"
+				type="submit"
+				disabled={loading}
+				value={loading ? 'Loading...' : 'Register'}
+			/>
 		</div>
 	</form>
 	{#if status == 200}

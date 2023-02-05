@@ -2,8 +2,7 @@
 	import { page } from '$app/stores';
 </script>
 
-<div class="flex h-[90vh] bg-slate-200">
-
+<div class="flex h-[90vh]">
 	<div class="bg-white m-auto w-[75vw] max-w-2xl shadow-xl rounded-2xl px-10 py-10 overflow-auto">
 		<h1 class="text-4xl tracking-wider font-bold">Clicking 🍿</h1>
 		<h2 class="text-2xl mb-[3%] tracking-wide font-semibold">Find your movie soulmate</h2>

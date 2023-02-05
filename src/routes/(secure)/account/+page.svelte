@@ -78,8 +78,7 @@
 	}
 </script>
 
-<div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200">
-
+<div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%]">
 	{#if loading}
 		<div class="mx-auto mt-[30vh] text-3xl">
 			<Loader />

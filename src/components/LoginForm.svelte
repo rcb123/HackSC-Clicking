@@ -1,19 +1,26 @@
 <script lang="ts">
-    import { supabase } from '$lib/supabaseClient'
+	import { supabase } from '$lib/supabaseClient';
 
-  
-    let loading = false
-	let success: boolean = false
+	let loading = false;
+	let success: boolean = false;
 	let email: string | null;
 	let password: string | null;
 	let emailError: string | null = null;
 	let passwordError: string | null = null;
 	let signInError: string | null = null;
 
-	let validEmail: 'Email must be a valid email address' | 'Email is required' | 'Email must be less than 64 characters' | null = null;
-	let validPassword: 'Password must be at least 6 characters' | 'Password must be less than 32 characters' | 'Password is required' | null = null;
-  
-    const isValidEmail = (email: string | null) => {
+	let validEmail:
+		| 'Email must be a valid email address'
+		| 'Email is required'
+		| 'Email must be less than 64 characters'
+		| null = null;
+	let validPassword:
+		| 'Password must be at least 6 characters'
+		| 'Password must be less than 32 characters'
+		| 'Password is required'
+		| null = null;
+
+	const isValidEmail = (email: string | null) => {
 		// eslint-disable-next-line no-useless-escape
 		const format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		if (email) {
@@ -66,7 +73,7 @@
 		});
 
 		if (error) {
-			signInError = String(error)
+			signInError = String(error);
 			return;
 		}
 
@@ -77,21 +84,21 @@
 	};
 
 	$: if (success) {
-		window.location.href = ('/account')
+		window.location.href = '/account';
 	}
 </script>
 
-
 <div class="lg:container mx-auto h-[90vh] w-full p-8">
-	<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
-	<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180" src="./vector_1.png" alt=""/>
-
 	<form
 		on:submit|preventDefault|trusted={login}
 		class="flex flex-col items-center w-full justify-center"
 	>
 		<h1 class="text-3xl my-2 font-extrabold">WELCOME BACK! 🍿</h1>
-		<p>Don't have an account? <a href="/signup" class="link link-warning font-bold!important">Sign up here.</a></p>
+		<p>
+			Don't have an account? <a href="/signup" class="link link-warning font-bold!important"
+				>Sign up here.</a
+			>
+		</p>
 		<div class="form-control w-full max-w-xs">
 			<label for="email" class="label">
 				<span class="label-text font-semibold">Email</span>
@@ -99,7 +106,9 @@
 			<input
 				type="email"
 				name="email"
-				class="border-yellow-500 input w-full max-w-xs {validEmail ? 'input-error' : 'input-bordered'}"
+				class="border-yellow-500 input w-full max-w-xs {validEmail
+					? 'input-error'
+					: 'input-bordered'}"
 				bind:value={email}
 			/>
 			<label for="email" class="label">
@@ -115,7 +124,9 @@
 			<input
 				type="password"
 				name="password"
-				class="border-yellow-500 input w-full max-w-xs {validPassword ? 'input-error' : 'input-bordered'}"
+				class="border-yellow-500 input w-full max-w-xs {validPassword
+					? 'input-error'
+					: 'input-bordered'}"
 				bind:value={password}
 			/>
 			<label for="password" class="label">
@@ -124,8 +135,11 @@
 				{/if}
 			</label>
 		</div>
-        <div class="w-full max-w-xs">
-			<button class="btn w-full bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100" type="submit">Log In</button>
+		<div class="w-full max-w-xs">
+			<button
+				class="btn w-full bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100"
+				type="submit">Log In</button
+			>
 		</div>
 	</form>
 	{#if signInError}

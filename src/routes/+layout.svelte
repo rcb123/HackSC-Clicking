@@ -21,10 +21,16 @@
 
 <title>Clicking</title>
 
-<div class="pb-[10vh] bg-slate-200 z-10">
-	<img class="absolute max-w-md z-0" src="./vector_1.png" alt="" />
-	<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180 z-0" src="./vector_1.png" alt="" />
-	<slot />
+<div class="pb-[10vh]">
+	<img class="fixed max-w-[50vw] -z-50 top-0 left-0" src="./vector_1.png" alt="" />
+	<span class="z-10">
+		<slot />
+	</span>
+	<img
+		class="fixed max-w-[50vw] right-0 bottom-[10vh] rotate-180 -z-50"
+		src="./vector_1.png"
+		alt=""
+	/>
 </div>
 
 <div class="btm-nav h-[10vh]">

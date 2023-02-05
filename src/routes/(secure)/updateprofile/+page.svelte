@@ -2,11 +2,38 @@
 	import type { AuthSession } from '@supabase/supabase-js';
 	import { supabase } from '$lib/supabaseClient';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	let loading: boolean = false;
 	let session: AuthSession = $page.data.session;
-	let username: string | null = 'User';
-	let avatarURL: string | null = 'https://www.w3schools.com/howto/img_avatar.png';
+	let username: string = 'User';
+	let avatarURL: string = 'https://www.w3schools.com/howto/img_avatar.png';
+
+	const getProfile = async () => {
+		try {
+			loading = true;
+			const { user } = session;
+
+			const { data, error, status } = await supabase
+				.from('profiles')
+				.select(`username, avatar_url`)
+				.eq('id', user.id)
+				.single();
+
+			if (data) {
+				username = data.username;
+				avatarURL = data.avatar_url;
+			}
+
+			if (error && status !== 406) throw error;
+		} catch (error) {
+			if (error instanceof Error) {
+				alert(error.message);
+			}
+		} finally {
+			loading = false;
+		}
+	};
 
 	async function updateProfile() {
 		try {
@@ -32,13 +59,12 @@
 		}
 	}
 
-    console.log(session);
+	onMount(() => {
+		getProfile();
+	});
 </script>
 
-<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
-<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180" src="./vector_1.png" alt=""/>
-
-<div class="h-[90vh] w-full bg-slate-200">
+<div class="h-[90vh] w-full">
 	<div class="h-full mx-auto pt-[20vh] w-[30vw] ">
 		<div>
 			<h1 class="text-2xl font-semibold text-center">Update your profile</h1>
@@ -68,7 +94,7 @@
 				/>
 			</div>
 
-            <div class="my-4 w-[30vw]">
+			<div class="my-4 w-[30vw]">
 				<label for="avatar_url">Avatar URL</label>
 				<input
 					id="avatar_url"
@@ -91,7 +117,7 @@
 </div>
 
 <style>
-    * {
-        font-family: Overpass;
-    }
+	* {
+		font-family: Overpass;
+	}
 </style>
