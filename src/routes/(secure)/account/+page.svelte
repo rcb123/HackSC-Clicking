@@ -62,30 +62,6 @@
 		}
 	};
 
-	async function updateProfile() {
-		try {
-			loading = true;
-			const { user } = session;
-
-			const updates = {
-				id: user.id,
-				username,
-				avatar_url: avatarUrl,
-				updated_at: new Date()
-			};
-
-			let { error } = await supabase.from('profiles').upsert(updates);
-
-			if (error) throw error;
-		} catch (error) {
-			if (error instanceof Error) {
-				alert(error.message);
-			}
-		} finally {
-			loading = false;
-		}
-	}
-
 	async function signOut() {
 		try {
 			loading = true;
@@ -138,28 +114,10 @@
 				<a href="/edit">
 					<button class="btn">Edit your cards</button>
 				</a>
-				<button class="btn">Update your profile</button>
+				<a href="/updateprofile">
+					<button class="btn">Update your profile</button>
+				</a>
 			</div>
-
-			<form class="form-widget" on:submit|preventDefault={updateProfile}>
-				<div>
-					<label for="email">Email</label>
-					<input id="email" type="text" value={session.user.email} disabled />
-				</div>
-				<div>
-					<label for="username">Name</label>
-					<input id="username" type="text" bind:value={username} />
-				</div>
-
-				<div>
-					<input
-						type="submit"
-						class="button block primary"
-						value={loading ? 'Loading...' : 'Update'}
-						disabled={loading}
-					/>
-				</div>
-			</form>
 		</div>
 	{/if}
 </div>
