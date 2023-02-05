@@ -51,8 +51,13 @@
 <div>
     <h1 class="text-3xl text-center mb-[0%] pt-7 pb-0 tracking-wide font-semibold">It's a match!</h1>
 </div>
+<div class="w-full text-center mt-3">
+    <a class="" href="/">
+        <button class="btn btn-primary">Chat Now!</button>
+    </a>
+</div>
 
-<div class="flex h-[90vh] bg-slate-200">
+<div class="flex h-[60vh] bg-slate-200">
 	<div class="flex flex-row justify-center m-auto align-center">
 		<div class="card w-96 bg-base-100 shadow-xl">
 			<figure>
