@@ -16,16 +16,16 @@
 	</a>
 </div>
 
-<div class="flex h-[60vh] bg-slate-200">
+<div class="flex h-[60vh]">
 	<div class="flex flex-row justify-center m-auto align-center">
 		<div class="card w-96 bg-base-100 shadow-xl">
-			<figure class="bg-yellow-100">
+			<figure>
 				<img
 					src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg"
 					alt="Movie Cover"
 				/>
 			</figure>
-			<div class="card-body bg-yellow-100">
+			<div class="card-body">
 				<h2 class="card-title">Interstellar</h2>
 				<p>I like it!!!</p>
 				<div class="card-actions justify-between mt-4">
@@ -40,13 +40,13 @@
 
 	<div class="flex flex-row justify-center m-auto align-center">
 		<div class="card w-96 bg-base-100 shadow-xl">
-			<figure class="bg-yellow-100">
+			<figure>
 				<img
 					src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg"
 					alt="Movie Cover"
 				/>
 			</figure>
-			<div class="card-body bg-yellow-100">
+			<div class="card-body">
 				<h2 class="card-title">Interstellar</h2>
 				<p>I LOVE THIS MOVIE!!!!!!!!!!!!!!!!!!!</p>
 				<div class="card-actions justify-between mt-4">

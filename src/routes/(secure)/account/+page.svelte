@@ -15,18 +15,23 @@
 	let cards = [
 		{
 			name: 'Avatar',
-			desc: 'An amazing film. Never seen such as concept executed so well!',
+			desc: 'Avatar is a visually stunning sci-fi movie that takes you to the beautiful world of Pandora. The special effects and 3D technology are breathtaking, creating an immersive experience. The story is well-crafted, touching on themes of environmentalism, cultural conflict, and love. Sam Worthingtons performance as Jake Sully is outstanding, making this a must-watch for sci-fi fans and anyone who loves stunning visual storytelling.',
 			cover: 'https://i.etsystatic.com/27725708/r/il/008c5a/2904647259/il_570xN.2904647259_ilg7.jpg'
 		},
 		{
+			name: 'Interstellar',
+			desc: 'Interstellar is a stunning and thought-provoking sci-fi movie that takes you on a journey through space and time. With a strong cast, beautiful cinematography, and a thought-provoking storyline, this movie is a must-watch for anyone who loves science fiction and philosophical exploration.',
+			cover: 'https://m.media-amazon.com/images/I/71LNVGVpWYL.jpg'
+		},
+		{
 			name: 'Avengers: Endgame',
-			desc: 'I was so excited to see this after the cliffhanger from Avengers: Infinity War. This movie was not as good overall, but it possibly had the best 8 minutes of Marvel history with everyone coming out together through the portals and battling it out!',
+			desc: 'Avengers: Endgame is a cinematic masterpiece that will leave you in awe. The conclusion to the Marvel Cinematic Universes story is an emotional rollercoaster, filled with epic action scenes and heartfelt moments that will have you on the edge of your seat until the very end.',
 			cover:
 				'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/108b520c55e3c9760f77a06110d6a73b_240x360_crop_center.progressive.jpg?v=1573652543'
 		},
 		{
 			name: 'Dunkirk',
-			desc: 'Although I was confused by it at first, I have come to recognize the complexity of the film with its jump cuts transitioning from scene to scene with a weird (but good) sense of time usage.',
+			desc: 'Dunkirk is a powerful and intense war movie that brings the horrors of the battle to life. The breathtaking cinematography and heart-pumping score will keep you on the edge of your seat as you witness the bravery of the soldiers and civilians during the evacuation of Dunkirk.',
 			cover:
 				'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/4c177c2b7f7bb9a679f089bcb50f844e_3e89eb5d-ffbd-4033-a00f-e595a3ef2e2a_240x360_crop_center.progressive.jpg?v=1573587540'
 		},
@@ -40,16 +45,6 @@
 			desc: 'RIP Chadwhick Boseman. 10/10',
 			cover: 'https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg'
 		},
-		{
-			name: 'Winnie the Pooh: Blood and Honey',
-			desc: 'WTF?',
-			cover: 'https://image.tmdb.org/t/p/w500/wtFwgFFk1ze789ghcadWGEVjj3N.jpg'
-		},
-		{
-			name: 'Top Gun: Maverick',
-			desc: 'USA! USA! USA!!!!!',
-			cover: 'https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg'
-		}
 	];
 
 	onMount(() => {
