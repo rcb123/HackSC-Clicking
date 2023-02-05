@@ -47,7 +47,7 @@
 	{:else}
 		<div class="flex h-[90vh]">
 			<div class="flex flex-row justify-center m-auto align-center">
-				<div class="card max-w-sm shadow-xl border">
+				<div class="card max-w-sm shadow-xl bg-base-100 border">
 					<figure>
 						<img
 							id="display_card"
