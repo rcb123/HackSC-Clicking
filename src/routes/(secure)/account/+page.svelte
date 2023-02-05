@@ -131,7 +131,7 @@
 				</div>
 			</div>
 			<!-- Bottom div with edit/update buttons -->
-			<div>
+			<div class="flex justify-evenly">
 				<a href="/create">
 					<button class="btn">Create new cards</button>
 				</a>
