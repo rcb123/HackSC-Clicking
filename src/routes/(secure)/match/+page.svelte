@@ -1,36 +1,83 @@
 <script lang="ts">
+	import { fly } from 'svelte/transition';
 	let matched: boolean = false;
-	let link =
-		'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg';
+	let first: boolean = true;
+
 	function dislike_clicked() {
-		link = 'https://image.tmdb.org/t/p/w500/o04jZs5SXhbvhqO4981W7KJXOWZ.jpg';
+		first = false;
 	}
+
 	function liked() {
 		matched = true;
 	}
 </script>
 
 {#if !matched}
-	<div class="flex h-[90vh]">
-		<div class="flex flex-row justify-center m-auto align-center">
-			<div class="card w-fit shadow-xl border">
-				<figure>
-					<img id="display_card" src={link} alt="Movie Cover" class="max-h-64" />
-				</figure>
-				<div class="card-body">
-					<h2 class="card-title">Movie</h2>
-					<p>Description</p>
-					<div class="card-actions justify-between mt-4">
-						<button class="btn btn-lg btn-success w-28" on:click={liked}>Like</button>
-						<button
-							class="btn btn-lg btn-error w-28 bg-gray-300 border-none"
-							on:click={dislike_clicked}>Dislike</button
-						>
+	{#if first}
+		<div class="flex h-[90vh]">
+			<div class="flex flex-row justify-center m-auto align-center">
+				<div class="card max-w-sm shadow-xl border">
+					<figure>
+						<img
+							id="display_card"
+							src="https://m.media-amazon.com/images/I/71LNVGVpWYL.jpg"
+							alt="Movie Cover"
+							class="h-64"
+						/>
+					</figure>
+					<div class="card-body pt-2">
+						<h2 class="card-title">Interstellar</h2>
+						<p class="overflow-y-scroll max-h-36">
+							Earth's future has been riddled by disasters, famines, and droughts. There is only one
+							way to ensure mankind's survival: Interstellar travel. A newly discovered wormhole in
+							the far reaches of our solar system allows a team of astronauts to go where no man has
+							gone before, a planet that may have the right environment to sustain human life.
+						</p>
+						<div class="card-actions justify-between mt-4">
+							<button class="btn btn-lg btn-success w-28" on:click={liked}>Like</button>
+							<button
+								class="btn btn-lg btn-error w-28 bg-gray-300 border-none"
+								on:click={dislike_clicked}>Dislike</button
+							>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	{:else}
+		<div class="flex h-[90vh]">
+			<div class="flex flex-row justify-center m-auto align-center">
+				<div class="card max-w-sm shadow-xl border">
+					<figure>
+						<img
+							id="display_card"
+							src="https://image.tmdb.org/t/p/w500/o04jZs5SXhbvhqO4981W7KJXOWZ.jpg"
+							alt="Movie Cover"
+							class="h-64"
+						/>
+					</figure>
+					<div class="card-body pt-2">
+						<h2 class="card-title">Shrek</h2>
+						<p class="overflow-y-scroll max-h-36">
+							Once upon a time, in a far away swamp, there lived an ogre named Shrek whose precious
+							solitude is suddenly shattered by an invasion of annoying fairy tale characters. They
+							were all banished from their kingdom by the evil Lord Farquaad. Determined to save
+							their home -- not to mention his -- Shrek cuts a deal with Farquaad and sets out to
+							rescue Princess Fiona to be Farquaad's bride. Rescuing the Princess may be small
+							compared to her deep, dark secret.
+						</p>
+						<div class="card-actions justify-between mt-4">
+							<button class="btn btn-lg btn-success w-28" on:click={liked}>Like</button>
+							<button
+								class="btn btn-lg btn-error w-28 bg-gray-300 border-none"
+								on:click={dislike_clicked}>Dislike</button
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{/if}
 {:else if matched}
 	<div>
 		<h1 class="text-3xl text-center mb-[0%] pt-7 pb-0 tracking-wide font-semibold">
@@ -46,97 +93,54 @@
 		</a>
 	</div>
 
-	<div class="flex h-[60vh]">
-		<div class="flex flex-row justify-center m-auto align-center responsiveness">
-			<div class="card w-96 bg-base-100 shadow-xl border">
-				<figure>
-					<img
-						class="max-h-64"
-						src="https://image.tmdb.org/t/p/w500/o04jZs5SXhbvhqO4981W7KJXOWZ.jpg"
-						alt="Movie Cover"
-					/>
-				</figure>
-				<div class="card-body">
-					<h2 class="card-title">Shrek</h2>
-					<p>
-						Shrek is a charming and hilarious animated movie that will have you laughing from start
-						to finish. With a talented voice cast, catchy music, and a heartwarming message about
-						beauty being in the eye of the beholder, this movie is a timeless classic that everyone
-						should see.
-					</p>
-					<div class="card-actions justify-between mt-4">
-						<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>
+	<div class="flex flex-row h-[60vh] justify-evenly items-center">
+		<div class="card max-w-sm h-[30rem] bg-base-100 shadow-xl border mx-4">
+			<figure>
+				<img
+					class="h-64"
+					src="https://image.tmdb.org/t/p/w500/o04jZs5SXhbvhqO4981W7KJXOWZ.jpg"
+					alt="Movie Cover"
+				/>
+			</figure>
+			<div class="card-body pt-2">
+				<h2 class="card-title">Shrek</h2>
+				<p class="overflow-y-scroll max-h-36">
+					Shrek is a charming and hilarious animated movie that will have you laughing from start to
+					finish. With a talented voice cast, catchy music, and a heartwarming message about beauty
+					being in the eye of the beholder, this movie is a timeless classic that everyone should
+					see.
+				</p>
+				<div class="card-actions justify-between mt-4">
+					<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>
 					<button class="btn btn-lg btn-error">Dislike</button> -->
-					</div>
 				</div>
 			</div>
 		</div>
-		<div class="arrow z-20" />
-		<div class="flex flex-row justify-center m-auto align-center responsiveness">
-			<div class="card w-96 bg-base-100 shadow-xl border">
-				<figure>
-					<img
-						class="max-h-64"
-						src="https://image.tmdb.org/t/p/w500/o04jZs5SXhbvhqO4981W7KJXOWZ.jpg"
-						alt="Movie Cover"
-					/>
-				</figure>
-				<div class="card-body">
-					<h2 class="card-title">Shrek</h2>
-					<p>
-						Shrek is a hilarious and heartwarming animated movie that is perfect for families. With
-						its lovable characters, clever humor, and touching story, this movie will have you
-						laughing and feeling all the feels in equal measure.
-					</p>
-					<div class="card-actions justify-between mt-4">
-						<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>
+
+		<div class="text-6xl mx-4">
+			<iconify-icon icon="mdi:arrow-left-right" />
+		</div>
+
+		<div class="card max-w-sm h-[30rem] bg-base-100 shadow-xl border mx-4">
+			<figure>
+				<img
+					class="h-64"
+					src="https://image.tmdb.org/t/p/w500/o04jZs5SXhbvhqO4981W7KJXOWZ.jpg"
+					alt="Movie Cover"
+				/>
+			</figure>
+			<div class="card-body pt-2">
+				<h2 class="card-title">Shrek</h2>
+				<p class="overflow-y-scroll max-h-36">
+					Shrek is a hilarious and heartwarming animated movie that is perfect for families. With
+					its lovable characters, clever humor, and touching story, this movie will have you
+					laughing and feeling all the feels in equal measure.
+				</p>
+				<div class="card-actions justify-between mt-4">
+					<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>
 					<button class="btn btn-lg btn-error">Dislike</button> -->
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 {/if}
-
-<style>
-	.arrow {
-		width: 5px;
-		height: 120px;
-		background-color: rgb(96, 93, 93);
-		/* Rotate div */
-		-ms-transform: rotate(30deg);
-		/* IE 9 */
-		-webkit-transform: rotate(30deg);
-		/* Chrome, Safari, Opera */
-		transform: rotate(90deg);
-		transform-origin: bottom left;
-		position: relative;
-		margin-top: 100px;
-		margin-left: -110px;
-	}
-	.arrow:after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		border-style: solid;
-		transform: translate(-40%, -50%);
-		border-width: 0 10px 20px 10px;
-		border-color: transparent transparent rgb(96, 93, 93) transparent;
-	}
-	.arrow:before {
-		content: '';
-		position: absolute;
-		bottom: -6px;
-		left: -4px;
-		border-style: solid;
-		transform: rotate(60deg);
-		border-width: 0 10px 20px 10px;
-		border-color: transparent transparent rgb(95, 96, 93) transparent;
-	}
-
-	.arrow-group {
-		display: flex;
-		flex-wrap: wrap;
-	}
-</style>

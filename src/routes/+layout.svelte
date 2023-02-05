@@ -16,6 +16,10 @@
 			subscription.unsubscribe();
 		};
 	});
+
+	function matchButton() {
+		window.location.href = '/match';
+	}
 </script>
 
 <title>Clicking</title>
@@ -38,11 +42,14 @@
 			<iconify-icon icon="mdi:home" />
 		</button>
 	</a>
-	<a href="/match">
-		<button class="btn btn-link text-warning rounded-none w-full h-full text-3xl">
+	<div>
+		<button
+			class="btn btn-link text-warning rounded-none w-full h-full text-3xl"
+			on:click={matchButton}
+		>
 			<iconify-icon icon="mdi:movie-open" />
 		</button>
-	</a>
+	</div>
 	<a href="/account">
 		<button class="btn btn-link text-warning rounded-none w-full h-full text-3xl">
 			<iconify-icon icon="mdi:user" />

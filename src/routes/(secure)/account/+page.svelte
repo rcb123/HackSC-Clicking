@@ -37,14 +37,14 @@
 		},
 		{
 			name: 'Puss in Boots: The Last Wish',
-			desc: 'I was surprised by how good this film is. Death was an amazing villian and every character is extremely engaging.',
+			desc: 'Puss in Boots: The Last Wish is a delightful and charming adventure that will have you grinning from ear to ear. With its whimsical storyline, lovable characters, and gorgeous animation, this movie is the perfect family-friendly escape that will leave you feeling entertained and uplifted.',
 			cover: 'https://image.tmdb.org/t/p/w500/kuf6dutpsT0vSVehic3EZIqkOBt.jpg'
 		},
 		{
 			name: 'Black Panther: Wakanda Forever',
-			desc: 'RIP Chadwhick Boseman. 10/10',
+			desc: 'Black Panther: Wakanda Forever is a powerful and emotional tribute to the late Chadwick Boseman and the beloved world of Wakanda. The movie is full of action, drama, and heart, and the new characters introduced add even more depth to the already rich world created in the first Black Panther movie.',
 			cover: 'https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg'
-		},
+		}
 	];
 
 	onMount(() => {
