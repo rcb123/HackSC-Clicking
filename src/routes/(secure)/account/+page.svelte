@@ -29,6 +29,30 @@
 			desc: 'Although I was confused by it at first, I have come to recognize the complexity of the film with its jump cuts transitioning from scene to scene with a weird (but good) sense of time usage.',
 			cover:
 				'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/4c177c2b7f7bb9a679f089bcb50f844e_3e89eb5d-ffbd-4033-a00f-e595a3ef2e2a_240x360_crop_center.progressive.jpg?v=1573587540'
+		},
+		{
+			name: 'Puss in Boots: The Last Wish',
+			desc: 'I was surprised by how good this film is. Death was an amazing villian and every character is extremely engaging.',
+			cover:
+				'https://image.tmdb.org/t/p/w500/kuf6dutpsT0vSVehic3EZIqkOBt.jpg'
+		},
+		{
+			name: 'Black Panther: Wakanda Forever',
+			desc: 'RIP Chadwhick Boseman. 10/10',
+			cover:
+				'https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg'
+		},
+		{
+			name: 'Winnie the Pooh: Blood and Honey',
+			desc: 'WTF?',
+			cover:
+				'https://image.tmdb.org/t/p/w500/wtFwgFFk1ze789ghcadWGEVjj3N.jpg'
+		},
+		{
+			name: 'Top Gun: Maverick',
+			desc: 'USA! USA! USA!!!!!',
+			cover:
+				'https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg'
 		}
 	];
 
