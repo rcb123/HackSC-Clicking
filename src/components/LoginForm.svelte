@@ -5,20 +5,10 @@
 	let success: boolean = false;
 	let email: string | null;
 	let password: string | null;
-	let emailError: string | null = null;
-	let passwordError: string | null = null;
 	let signInError: string | null = null;
 
-	let validEmail:
-		| 'Email must be a valid email address'
-		| 'Email is required'
-		| 'Email must be less than 64 characters'
-		| null = null;
-	let validPassword:
-		| 'Password must be at least 6 characters'
-		| 'Password must be less than 32 characters'
-		| 'Password is required'
-		| null = null;
+	let validEmail: 'Email must be a valid email address' | 'Email is required' | 'Email must be less than 64 characters' | null = null;
+	let validPassword: 'Password must be at least 6 characters' | 'Password must be less than 32 characters' | 'Password is required' | null = null;
 
 	const isValidEmail = (email: string | null) => {
 		// eslint-disable-next-line no-useless-escape
@@ -53,17 +43,20 @@
 
 	const login = async () => {
 		success = false;
-		let validEmail = isValidEmail(email);
-		let validPassword = isValidPassword(password);
+		loading = true;
+		validEmail = isValidEmail(email);
+		validPassword = isValidPassword(password);
 		const validationError = validEmail || validPassword;
 
 		if (validationError) {
-			emailError = validEmail;
-			passwordError = validPassword;
+			console.log(validEmail)
+			console.log(validPassword)
+			loading = false;
 			return;
 		}
 
 		if (!email || !password) {
+			loading = false;
 			return;
 		}
 
@@ -74,11 +67,15 @@
 
 		if (error) {
 			signInError = String(error);
+			validEmail = null;
+			validPassword = null;
+			loading = false;
 			return;
 		}
 
-		emailError = null;
-		passwordError = null;
+		validEmail = null;
+		validPassword = null;
+		loading = false;
 		success = true;
 		return;
 	};
@@ -89,10 +86,7 @@
 </script>
 
 <div class="lg:container mx-auto h-[90vh] w-full p-8">
-	<form
-		on:submit|preventDefault|trusted={login}
-		class="flex flex-col items-center w-full justify-center"
-	>
+	<form on:submit|preventDefault={login} class="flex flex-col items-center w-full justify-center">
 		<h1 class="text-3xl my-2 font-extrabold">WELCOME BACK! 🍿</h1>
 		<p>
 			Don't have an account? <a href="/signup" class="link link-warning font-bold!important"
@@ -106,9 +100,7 @@
 			<input
 				type="email"
 				name="email"
-				class="border-yellow-500 input w-full max-w-xs {validEmail
-					? 'input-error'
-					: 'input-bordered'}"
+				class="input w-full max-w-xs {validEmail ? 'input-error' : 'border-yellow-500'}"
 				bind:value={email}
 			/>
 			<label for="email" class="label">
@@ -124,9 +116,7 @@
 			<input
 				type="password"
 				name="password"
-				class="border-yellow-500 input w-full max-w-xs {validPassword
-					? 'input-error'
-					: 'input-bordered'}"
+				class="input w-full max-w-xs {validPassword ? 'input-error' : 'border-yellow-500'}"
 				bind:value={password}
 			/>
 			<label for="password" class="label">
@@ -136,10 +126,12 @@
 			</label>
 		</div>
 		<div class="w-full max-w-xs">
-			<button
+			<input
 				class="btn w-full bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100"
-				type="submit">Log In</button
-			>
+				type="submit"
+				value={loading ? 'Loading...' : 'Log In'}
+				disabled={loading}
+			/>
 		</div>
 	</form>
 	{#if signInError}

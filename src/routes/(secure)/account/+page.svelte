@@ -9,8 +9,8 @@
 
 	let session: AuthSession = $page.data.session;
 	let loading = false;
-	let username: string | null = 'User';
-	let avatarUrl: string | null = 'https://www.w3schools.com/howto/img_avatar.png';
+	let username: string = 'User';
+	let avatarUrl: string = '';
 
 	let cards = [
 		{
@@ -33,26 +33,22 @@
 		{
 			name: 'Puss in Boots: The Last Wish',
 			desc: 'I was surprised by how good this film is. Death was an amazing villian and every character is extremely engaging.',
-			cover:
-				'https://image.tmdb.org/t/p/w500/kuf6dutpsT0vSVehic3EZIqkOBt.jpg'
+			cover: 'https://image.tmdb.org/t/p/w500/kuf6dutpsT0vSVehic3EZIqkOBt.jpg'
 		},
 		{
 			name: 'Black Panther: Wakanda Forever',
 			desc: 'RIP Chadwhick Boseman. 10/10',
-			cover:
-				'https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg'
+			cover: 'https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg'
 		},
 		{
 			name: 'Winnie the Pooh: Blood and Honey',
 			desc: 'WTF?',
-			cover:
-				'https://image.tmdb.org/t/p/w500/wtFwgFFk1ze789ghcadWGEVjj3N.jpg'
+			cover: 'https://image.tmdb.org/t/p/w500/wtFwgFFk1ze789ghcadWGEVjj3N.jpg'
 		},
 		{
 			name: 'Top Gun: Maverick',
 			desc: 'USA! USA! USA!!!!!',
-			cover:
-				'https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg'
+			cover: 'https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg'
 		}
 	];
 
@@ -112,8 +108,12 @@
 			<!-- Top div with user avatar and name -->
 			<div class="flex flex-row items-center mb-4">
 				<div class="avatar">
-					<div class="w-12 rounded-full ring ring-red-400 ring-offset-base-100 ring-offset-2">
-						<img src={avatarUrl} alt="avatar" />
+					<div class="w-12 rounded-full ring ring-yellow-300 ring-offset-base-100 ring-offset-2">
+						{#if avatarUrl !== ''}
+							<img src={avatarUrl} alt="avatar" />
+						{:else}
+							<img src="/avatar.svg" alt="avatar" />
+						{/if}
 					</div>
 				</div>
 				<h1 class="text-2xl ml-4">Welcome Back: {username}</h1>
@@ -131,7 +131,7 @@
 				</div>
 			</div>
 			<!-- Bottom div with edit/update buttons -->
-			<div>
+			<div class="flex justify-evenly">
 				<a href="/create">
 					<button class="btn">Create new cards</button>
 				</a>
