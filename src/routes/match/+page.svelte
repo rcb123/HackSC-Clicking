@@ -1,8 +1,8 @@
 <script>
-	let link = 'https://m.media-amazon.com/images/I/51BANINoAxL._AC_.jpg';
+	let link = 'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg';
 	function dislike_clicked() {
 		link =
-			'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg';
+			'https://image.tmdb.org/t/p/w500/o04jZs5SXhbvhqO4981W7KJXOWZ.jpg';
 	}
 </script>
 
@@ -14,7 +14,7 @@
 			</figure>
 			<div class="card-body">
 				<h2 class="card-title">Movie</h2>
-				<p>Movie Description</p>
+				<p>Description</p>
 				<div class="card-actions justify-between mt-4">
 					<a href="/liked">
 						<button class="btn btn-lg btn-success w-28">Like</button>
