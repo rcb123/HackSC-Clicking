@@ -14,19 +14,19 @@
 
 	let cards = [
 		{
-			name: 'Movie1',
-			desc: 'The first movie',
+			name: 'Avatar',
+			desc: 'An amazing film. Never seen such as concept executed so well!',
 			cover: 'https://i.etsystatic.com/27725708/r/il/008c5a/2904647259/il_570xN.2904647259_ilg7.jpg'
 		},
 		{
-			name: 'Movie2',
-			desc: 'The second movie',
+			name: 'Avengers: Endgame',
+			desc: 'I was so excited to see this after the cliffhanger from Avengers: Infinity War. This movie was not as good overall, but it possibly had the best 8 minutes of Marvel history with everyone coming out together through the portals and battling it out!',
 			cover:
 				'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/108b520c55e3c9760f77a06110d6a73b_240x360_crop_center.progressive.jpg?v=1573652543'
 		},
 		{
 			name: 'Movie2',
-			desc: 'The third movie',
+			desc: 'Although I was confused by it at first, I have come to recognize the complexity of the film with its jump cuts transitioning from scene to scene with a weird (but good) sense of time usage.',
 			cover:
 				'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/4c177c2b7f7bb9a679f089bcb50f844e_3e89eb5d-ffbd-4033-a00f-e595a3ef2e2a_240x360_crop_center.progressive.jpg?v=1573587540'
 		}
