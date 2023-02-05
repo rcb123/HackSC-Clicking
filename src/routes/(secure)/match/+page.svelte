@@ -13,7 +13,7 @@
 {#if !matched}
 	<div class="flex h-[90vh]">
 		<div class="flex flex-row justify-center m-auto align-center">
-			<div class="card w-fit shadow-xl">
+			<div class="card w-fit shadow-xl border">
 				<figure>
 					<img id="display_card" src={link} alt="Movie Cover" class="max-h-64" />
 				</figure>
@@ -21,7 +21,7 @@
 					<h2 class="card-title">Movie</h2>
 					<p>Description</p>
 					<div class="card-actions justify-between mt-4">
-							<button class="btn btn-lg btn-success w-28" on:click={liked}>Like</button>
+						<button class="btn btn-lg btn-success w-28" on:click={liked}>Like</button>
 						<button
 							class="btn btn-lg btn-error w-28 bg-gray-300 border-none"
 							on:click={dislike_clicked}>Dislike</button
@@ -48,7 +48,7 @@
 
 	<div class="flex h-[60vh]">
 		<div class="flex flex-row justify-center m-auto align-center responsiveness">
-			<div class="card w-96 bg-base-100 shadow-xl">
+			<div class="card w-96 bg-base-100 shadow-xl border">
 				<figure>
 					<img
 						class="max-h-64"
@@ -58,7 +58,12 @@
 				</figure>
 				<div class="card-body">
 					<h2 class="card-title">Shrek</h2>
-					<p>I like it!!!</p>
+					<p>
+						Shrek is a charming and hilarious animated movie that will have you laughing from start
+						to finish. With a talented voice cast, catchy music, and a heartwarming message about
+						beauty being in the eye of the beholder, this movie is a timeless classic that everyone
+						should see.
+					</p>
 					<div class="card-actions justify-between mt-4">
 						<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>
 					<button class="btn btn-lg btn-error">Dislike</button> -->
@@ -66,11 +71,9 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="arrow" />
-
+		<div class="arrow z-20" />
 		<div class="flex flex-row justify-center m-auto align-center responsiveness">
-			<div class="card w-96 bg-base-100 shadow-xl">
+			<div class="card w-96 bg-base-100 shadow-xl border">
 				<figure>
 					<img
 						class="max-h-64"
@@ -80,7 +83,11 @@
 				</figure>
 				<div class="card-body">
 					<h2 class="card-title">Shrek</h2>
-					<p>I LOVE THIS MOVIE!!!!!!!!!!!!!!!!!!!</p>
+					<p>
+						Shrek is a hilarious and heartwarming animated movie that is perfect for families. With
+						its lovable characters, clever humor, and touching story, this movie will have you
+						laughing and feeling all the feels in equal measure.
+					</p>
 					<div class="card-actions justify-between mt-4">
 						<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>
 					<button class="btn btn-lg btn-error">Dislike</button> -->

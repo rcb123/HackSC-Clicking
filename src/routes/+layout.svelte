@@ -32,7 +32,7 @@
 	/>
 </div>
 
-<div class="btm-nav h-[10vh] z-50">
+<div class="btm-nav h-[10vh] z-50 border">
 	<a href="/">
 		<button class="btn btn-link text-warning rounded-none w-full h-full text-3xl">
 			<iconify-icon icon="mdi:home" />
