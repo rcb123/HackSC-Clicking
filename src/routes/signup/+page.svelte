@@ -106,6 +106,9 @@
 </script>
 
 <div class="lg:container mx-auto pt-[5%] h-[90vh] w-full p-8">
+	<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
+	<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180" src="./vector_1.png" alt=""/>
+
 	<form
 		on:submit|preventDefault={signup}
 		class="flex flex-col items-center w-full justify-center"

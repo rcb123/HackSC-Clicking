@@ -5,7 +5,7 @@
 
 <div class="flex h-[90vh] bg-slate-200">
 	<img class="absolute max-w-md" src="./vector_1.png" alt=""/>
-	<img class="absolute max-w-lg right-0 bottom-10 rotate-180" src="./vector_1.png" alt=""/>
+	<img class="absolute max-w-lg right-0 bottom-[10vh] rotate-180" src="./vector_1.png" alt=""/>
 
 	<div class="bg-white m-auto w-[75vw] max-w-2xl shadow-xl rounded-2xl px-10 py-10 overflow-auto">
 		<h1 class="text-4xl tracking-wider font-bold">Clicking 🍿</h1>
