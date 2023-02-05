@@ -27,7 +27,7 @@
 			</label>
 			<input
 				name="card-name"
-				class="input w-full max-w-xs"
+				class="border-yellow-500 input w-full max-w-xs"
 				bind:value={movieName}
 			/>
 			<label for="card-name" class="label">
@@ -40,7 +40,7 @@
 			<textarea
 				name="description"
                 id="description"
-				class="w-full max-w-xs rounded-lg input input-lg h-24"
+				class="border-yellow-500 w-full max-w-xs rounded-lg input input-lg h-24"
                 rows="4"
                 bind:value={movieDesc}
 			></textarea>
@@ -52,12 +52,12 @@
 			<label for="movie-url" class="label">
 				<span class="label-text">Cover URL:</span>
 			</label>
-			<input name="movie-url" class="input w-full max-w-xs" bind:value={movieURL} />
+			<input name="movie-url" class="border-yellow-500 input w-full max-w-xs" bind:value={movieURL} />
 			<label for="movie-url" class="label" />
 		</div>
 
         <div class="w-full max-w-xs">
-			<button class="btn btn-primary w-full normal-case" type="submit">Edit</button>
+			<button class="btn w-full bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100" type="submit">Edit</button>
 		</div>
 	</form>
 </div>

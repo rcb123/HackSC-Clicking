@@ -70,7 +70,7 @@
 			<label for="card-name" class="label">
 				<span class="label-text">Movie Name:</span>
 			</label>
-			<input name="card-name" class="input w-full max-w-xs" bind:value={movieName} />
+			<input name="card-name" class="border-yellow-500 input w-full max-w-xs" bind:value={movieName} />
 			<label for="card-name" class="label" />
 		</div>
 		<div class="form-control w-full max-w-xs">
@@ -80,7 +80,7 @@
 			<textarea
 				name="description"
 				id="description"
-				class="w-full max-w-xs rounded-lg input input-lg h-24"
+				class="border-yellow-500 w-full max-w-xs rounded-lg input input-lg h-24"
 				rows="4"
 				bind:value={movieDesc}
 			/>
@@ -93,13 +93,13 @@
 			<label for="movie-url" class="label">
 				<span class="label-text">Cover URL:</span>
 			</label>
-			<input name="movie-url" class="input w-full max-w-xs" bind:value={movieURL} />
+			<input name="movie-url" class="border-yellow-500 input w-full max-w-xs" bind:value={movieURL} />
 			<label for="movie-url" class="label" />
 		</div>
 
 		<div class="w-full max-w-xs">
 			<input
-				class="btn btn-primary w-full"
+				class="btn w-full bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100"
 				type="submit"
 				value={loading ? 'Loading...' : 'Create'}
 				disabled={loading}
