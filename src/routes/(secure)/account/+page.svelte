@@ -76,6 +76,8 @@
 			window.location.href = '/';
 		}
 	}
+
+
 </script>
 
 <div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200 ">
