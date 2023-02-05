@@ -11,11 +11,11 @@
 	let loading: boolean = false;
 	let success: boolean = false;
 
-	let counterColor = movieDesc.length > 100 ? 'red' : '';
+	let counterColor = movieDesc.length > 500 ? 'red' : '';
 
 	$: {
 		comment = movieDesc.trim();
-		counterColor = comment.length > 100 ? 'red' : '';
+		counterColor = comment.length > 500 ? 'red' : '';
 	}
 
 	const createMovieCard = async () => {
@@ -85,7 +85,7 @@
 				bind:value={movieDesc}
 			/>
 			<div id="counter" class="text-right" style="color: {counterColor}">
-				{movieDesc.length} / 100
+				{movieDesc.length} / 500
 			</div>
 			<label for="description" class="label" />
 		</div>
@@ -113,7 +113,7 @@
 	{/if}
 	{#if success}
 		<div class="mt-10 bg-slate-50 rounded-xl p-6 shadow-lg w-fit mx-auto">
-			<p class="text-lg text-center font-medium text-success">Successfully updated movie card!</p>
+			<p class="text-lg text-center font-medium text-success">Successfully created movie card!</p>
 		</div>
 	{/if}
 </div>

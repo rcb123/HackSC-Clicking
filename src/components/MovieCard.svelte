@@ -4,7 +4,7 @@
 	export let movieCover: string;
 </script>
 
-<div class="card w-[50vw] max-w-xs bg-slate-900 shadow-xl border mb-2 image-full">
+<div class="card w-[50vw] max-w-xs bg-slate-900 shadow border mb-2 image-full">
 	<figure>
 		<img src={movieCover} alt="Movie Cover" class="overflow-hidden" />
 	</figure>
