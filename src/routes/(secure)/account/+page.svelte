@@ -134,7 +134,7 @@
 					<button class="btn">Create new cards</button>
 				</a>
 				<a href="/edit">
-					<button class="btn" on:click={edit}>Edit your cards</button>
+					<button class="btn">Edit your cards</button>
 				</a>
 				<button class="btn">Update your profile</button>
 			</div>
