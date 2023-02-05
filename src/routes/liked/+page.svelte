@@ -49,7 +49,7 @@
 </style>
 
 <div>
-    <h1 class="text-3xl text-center mb-[0%] tracking-wide font-semibold">It's a match!</h1>
+    <h1 class="text-3xl text-center mb-[0%] pt-7 pb-0 tracking-wide font-semibold">It's a match!</h1>
 </div>
 
 <div class="flex h-[90vh] bg-slate-200">
