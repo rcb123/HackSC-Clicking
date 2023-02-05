@@ -54,7 +54,7 @@
     <h1 class="text-3xl text-center mb-[0%] pt-7 pb-0 tracking-wide font-semibold">It's a match!</h1>
 </div>
 <div class="w-full text-center mt-3">
-    <a class="" href="/">
+    <a class="" href="/chat">
         <button class="btn bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100">Chat Now!</button>
     </a>
 </div>

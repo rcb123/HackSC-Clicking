@@ -80,7 +80,11 @@
 
 </script>
 
-<div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200 ">
+<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
+<!-- <img class="absolute max-w-lg right-0 -bottom-[55vh] rotate-180" src="./vector_1.png" alt=""/> -->
+
+<div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200">
+
 	{#if loading}
 		<div class="mx-auto mt-[30vh] text-3xl">
 			<Loader />

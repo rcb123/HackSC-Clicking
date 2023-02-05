@@ -4,6 +4,11 @@
 		link="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg";
 	}
 </script>
+<style>
+	.mygreybtn {
+		background-color: #D6D5D1;
+	}
+</style>
 
 <div class="flex h-[90vh] bg-slate-200">
 	<img class="absolute max-w-md left-0 top-0" src="./vector_1.png" alt=""/>
@@ -26,7 +31,7 @@
 					<a href="/liked">
 						<button class="btn btn-lg btn-success w-28">Like</button>
 					</a>
-					<button class="btn btn-lg btn-error w-28" on:click={dislike_clicked}>Dislike</button>
+					<button class="btn btn-lg btn-error w-28 mygreybtn border-none" on:click={dislike_clicked}>Dislike</button>
 				</div>
 			</div>
 		</div>
