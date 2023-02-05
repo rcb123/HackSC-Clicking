@@ -1,8 +1,22 @@
 <script lang="ts">
+    // import MediaQuery from "$components/MediaQuery.svelte";
+	import { AuthApiError, AuthError } from "@supabase/supabase-js";
 	const like_clicked = async () => {
 		window.location.href = '/liked';
 	};
 </script>
+<!-- 
+<MediaQuery query="(max-width: 1160px)" let:matches>
+	{#if matches}
+        <style>
+            .responsiveness {
+                max-width: 10px;
+                padding: 0;
+                margin: auto;
+            }
+        </style>
+	{/if}
+</MediaQuery> -->
 
 <div>
 	<h1 class="text-3xl text-center mb-[0%] pt-7 pb-0 tracking-wide font-semibold">It's a match!</h1>
@@ -17,16 +31,17 @@
 </div>
 
 <div class="flex h-[60vh] bg-slate-200">
-	<div class="flex flex-row justify-center m-auto align-center">
+	<div class="flex flex-row justify-center m-auto align-center responsiveness">
 		<div class="card w-96 bg-base-100 shadow-xl">
 			<figure class="bg-yellow-100">
 				<img
-					src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg"
+                    class="max-h-64"
+					src="https://image.tmdb.org/t/p/w500/o04jZs5SXhbvhqO4981W7KJXOWZ.jpg"
 					alt="Movie Cover"
 				/>
 			</figure>
 			<div class="card-body bg-yellow-100">
-				<h2 class="card-title">Interstellar</h2>
+				<h2 class="card-title">Shrek</h2>
 				<p>I like it!!!</p>
 				<div class="card-actions justify-between mt-4">
 					<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>
@@ -38,16 +53,17 @@
 
 	<div class="arrow" />
 
-	<div class="flex flex-row justify-center m-auto align-center">
+	<div class="flex flex-row justify-center m-auto align-center responsiveness">
 		<div class="card w-96 bg-base-100 shadow-xl">
 			<figure class="bg-yellow-100">
 				<img
-					src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg"
+                    class="max-h-64"
+					src="https://image.tmdb.org/t/p/w500/o04jZs5SXhbvhqO4981W7KJXOWZ.jpg"
 					alt="Movie Cover"
 				/>
 			</figure>
 			<div class="card-body bg-yellow-100">
-				<h2 class="card-title">Interstellar</h2>
+				<h2 class="card-title">Shrek</h2>
 				<p>I LOVE THIS MOVIE!!!!!!!!!!!!!!!!!!!</p>
 				<div class="card-actions justify-between mt-4">
 					<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>
