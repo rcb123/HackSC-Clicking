@@ -76,8 +76,6 @@
 			window.location.href = '/';
 		}
 	}
-
-
 </script>
 
 <div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200 ">
@@ -100,9 +98,11 @@
 			<!-- Middle div with movie cards -->
 			<div>
 				<h1 class="text-2xl mb-4">Your Movie Cards:</h1>
-				<div class="grid w-full justify-evenly grid-cols-3">
+				<div class="carousel carousel-center p-4 space-x-4 rounded-box">
 					{#each cards as card}
-						<MovieCard movieName={card.name} movieDesc={card.desc} movieCover={card.cover} />
+						<div class="carousel-item">
+							<MovieCard movieName={card.name} movieDesc={card.desc} movieCover={card.cover} />
+						</div>
 					{/each}
 				</div>
 			</div>
