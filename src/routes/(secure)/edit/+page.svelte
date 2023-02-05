@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { supabase } from '$lib/supabaseClient'
-
 	let movieName: string = '';
 	let movieDesc: string = '';
 	let movieURL: string = '';
@@ -30,6 +28,7 @@
 			<input
 				name="card-name"
 				class="input w-full max-w-xs"
+				bind:value={movieName}
 			/>
 			<label for="card-name" class="label">
 			</label>
@@ -58,7 +57,13 @@
 		</div>
 
         <div class="w-full max-w-xs">
-			<button class="btn btn-primary w-full" type="submit">Edit </button>
+			<button class="btn btn-primary w-full normal-case" type="submit">Edit</button>
 		</div>
 	</form>
 </div>
+
+<style>
+	* {
+		font-family: Overpass;
+	}
+</style>

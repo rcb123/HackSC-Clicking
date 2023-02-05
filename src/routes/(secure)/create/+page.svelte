@@ -117,3 +117,9 @@
 		</div>
 	{/if}
 </div>
+
+<style>
+	* {
+		font-family: Overpass;
+	}
+</style>
