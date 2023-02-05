@@ -91,21 +91,21 @@
 	{/if}
 {:else if matched}
 	<div>
-		<h1 class="text-3xl text-center mb-[0%] pt-7 pb-0 tracking-wide font-semibold">
-			It's a match!
+		<h1 class="text-3xl text-center mb-[0%] pt-16 pb-0 tracking-wide font-semibold">
+			It's a Match!
 		</h1>
 	</div>
-	<div class="w-full text-center mt-3">
+	<div class="w-full text-center pt-4">
 		<a class="" href="/chat">
 			<button
-				class="btn bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-base text-black border-none hover:bg-yellow-100"
-				>Chat Now!</button
+				class="btn bg-yellow-200 btn-primary rounded-3xl normal-case font-semibold text-lg text-black border-none hover:bg-yellow-100"
+				>Chat Now</button
 			>
 		</a>
 	</div>
 
 	<div class="flex flex-row h-[60vh] justify-evenly items-center">
-		<div class="card max-w-sm h-[30rem] bg-base-100 shadow-xl border mx-4">
+		<div class="card w-96 h-[30rem] bg-base-100 shadow-xl border mx-10">
 			<figure>
 				<img
 					class="h-64"
@@ -128,11 +128,11 @@
 			</div>
 		</div>
 
-		<div class="text-6xl mx-4">
+		<div class="text-6xl">
 			<iconify-icon icon="mdi:arrow-left-right" />
 		</div>
 
-		<div class="card max-w-sm h-[30rem] bg-base-100 shadow-xl border mx-4">
+		<div class="card w-96 h-[30rem] bg-base-100 shadow-xl border mx-10">
 			<figure>
 				<img
 					class="h-64"
