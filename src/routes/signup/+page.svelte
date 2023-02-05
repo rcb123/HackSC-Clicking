@@ -95,6 +95,8 @@
 		status = 200
 		return;
 	};
+
+	
 </script>
 
 <div class="lg:container mx-auto pt-[5%] h-[90vh] w-full p-8">

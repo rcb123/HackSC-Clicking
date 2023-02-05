@@ -2,6 +2,15 @@
     import { supabase } from '$lib/supabaseClient'
 	import { enhance } from '$app/forms';
 
+    let comment = '';
+    let counterColor = comment.length > 100 ? 'red' : '';
+
+
+    function wordCounter() {
+        comment = comment.trim();
+        counterColor = comment.length > 100 ? 'red' : '';
+    }
+    
 </script>
 
 
@@ -28,9 +37,13 @@
 			</label>
 			<textarea
 				name="description"
+                id="description"
 				class="w-full max-w-xs"
                 rows="4"
+                bind:value={comment}
+                on:input={wordCounter}
 			></textarea>
+            <div id="counter" class="text-right" style="color: {counterColor}">{comment.length} / 100</div>
 			<label for="description" class="label">
 			</label>
 		</div>

@@ -21,6 +21,8 @@
 
 <title>Clicking</title>
 
+<!-- <img src="vector_1.png"/> -->
+
 <div class="pb-[10vh] bg-slate-200">
 	<slot />
 </div>
