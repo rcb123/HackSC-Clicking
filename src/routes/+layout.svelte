@@ -33,7 +33,7 @@
 	/>
 </div>
 
-<div class="btm-nav h-[10vh]">
+<div class="btm-nav h-[10vh] z-50">
 	<a href="/">
 		<button class="btn btn-link text-warning rounded-none w-full h-full text-3xl">
 			<Icon icon="mdi:home" />
