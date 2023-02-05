@@ -6,6 +6,7 @@
 	let passwordConfirm: string | null = null;
 	let terms: boolean = false;
 	let status: number | null = null;
+	let loading: boolean = false;
 
 	let validEmail: 'Email must be a valid email address' | 'Email is required' | 'Email must be less than 64 characters' | null = null;
 	let validPassword: 'Password must be at least 6 characters' | 'Password must be less than 32 characters' | 'Password is required' | null = null;
@@ -62,8 +63,10 @@
 	};
 
 	const signup = async () => {
+		loading = true;
 		if (!email || !password) {
 			status = 500;
+			loading = false;
 			return;
 		}
 		status = null;
@@ -75,6 +78,7 @@
 
 		if (validationError) {
 			status = 500;
+			loading = false;
 			return;
 		}
 
@@ -85,6 +89,7 @@
 
 		if (error) {
 			status = 500;
+			loading = false;
 			return;
 		}
 
@@ -93,6 +98,7 @@
 		passwordConfirm = null;
 		terms = false;
 		status = 200
+		loading = false;
 		return;
 	};
 
@@ -172,7 +178,7 @@
 			</label>
 		</div>
 		<div class="w-full max-w-xs">
-			<button class="btn btn-primary w-full" type="submit">Register</button>
+			<input class="btn btn-primary w-full" type="submit" disabled={loading} value={loading ? 'Loading...' : 'Register'}/>
 		</div>
 	</form>
 	{#if status == 200}
