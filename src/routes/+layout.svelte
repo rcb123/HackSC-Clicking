@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { supabase } from '$lib/supabaseClient';
 	import { invalidate } from '$app/navigation';
-	import Icon from '@iconify/svelte';
 
 	import { onMount } from 'svelte';
 	import '$root/styles.css';
@@ -36,17 +35,17 @@
 <div class="btm-nav h-[10vh] z-50">
 	<a href="/">
 		<button class="btn btn-link text-warning rounded-none w-full h-full text-3xl">
-			<Icon icon="mdi:home" />
+			<iconify-icon icon="mdi:home" />
 		</button>
 	</a>
 	<a href="/match">
 		<button class="btn btn-link text-warning rounded-none w-full h-full text-3xl">
-			<Icon icon="mdi:movie-open" />
+			<iconify-icon icon="mdi:movie-open" />
 		</button>
 	</a>
 	<a href="/account">
 		<button class="btn btn-link text-warning rounded-none w-full h-full text-3xl">
-			<Icon icon="mdi:user" />
+			<iconify-icon icon="mdi:user" />
 		</button>
 	</a>
 </div>
