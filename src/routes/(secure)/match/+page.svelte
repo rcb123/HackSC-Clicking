@@ -132,9 +132,12 @@
 			<div class="card-body pt-2">
 				<h2 class="card-title">Shrek</h2>
 				<p class="overflow-y-scroll max-h-36">
-					Shrek is a hilarious and heartwarming animated movie that is perfect for families. With
-					its lovable characters, clever humor, and touching story, this movie will have you
-					laughing and feeling all the feels in equal measure.
+					Once upon a time, in a far away swamp, there lived an ogre named Shrek whose precious
+					solitude is suddenly shattered by an invasion of annoying fairy tale characters. They were
+					all banished from their kingdom by the evil Lord Farquaad. Determined to save their home
+					-- not to mention his -- Shrek cuts a deal with Farquaad and sets out to rescue Princess
+					Fiona to be Farquaad's bride. Rescuing the Princess may be small compared to her deep,
+					dark secret.
 				</p>
 				<div class="card-actions justify-between mt-4">
 					<!-- <button class="btn btn-lg btn-success" on:click={like_clicked}>Like</button>

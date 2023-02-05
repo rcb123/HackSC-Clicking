@@ -28,7 +28,7 @@
 	});
 </script>
 
-<div class="flex-1 overflow-x-hidden overflow-y-auto mt-[4px]" bind:this={div} in:fade>
+<div class="flex-1 overflow-x-hidden overflow-y-auto my-[4px]" bind:this={div} in:fade>
 	{#if $store.msgs.length}
 		{#each $store.msgs as msg (msg.id)}
 			<Message {msg} />

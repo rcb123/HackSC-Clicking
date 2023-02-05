@@ -111,7 +111,7 @@
 						{/if}
 					</div>
 				</div>
-				<h1 class="text-2xl ml-4">Welcome Back: {username}</h1>
+				<h1 class="text-2xl ml-4">Welcome back {username}</h1>
 				<button class="btn ml-auto" on:click={signOut} disabled={loading}>Sign Out</button>
 			</div>
 			<!-- Middle div with movie cards -->
