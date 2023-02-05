@@ -87,10 +87,10 @@
 		on:submit|preventDefault|trusted={login}
 		class="flex flex-col items-center w-full justify-center"
 	>
-		<h1 class="text-3xl font-medium text-center my-2">Login Here! 🍿</h1>
+		<h1 class="text-3xl my-2 font-extrabold">Login Here! 🍿</h1>
 		<div class="form-control w-full max-w-xs">
 			<label for="email" class="label">
-				<span class="label-text">Email</span>
+				<span class="label-text font-semibold">Email</span>
 			</label>
 			<input
 				type="email"
@@ -106,7 +106,7 @@
 		</div>
 		<div class="form-control w-full max-w-xs">
 			<label for="password" class="label">
-				<span class="label-text">Password</span>
+				<span class="label-text font-semibold">Password</span>
 			</label>
 			<input
 				type="password"
@@ -130,3 +130,9 @@
 		</div>
 	{/if}
 </div>
+
+<style>
+	* {
+		font-family: Overpass;
+	}
+</style>

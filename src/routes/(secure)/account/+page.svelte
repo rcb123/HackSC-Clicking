@@ -5,12 +5,12 @@
 	import { page } from '$app/stores';
 
 	import MovieCard from '$components/MovieCard.svelte';
-	import Loader from '$components/Loader.svelte'
+	import Loader from '$components/Loader.svelte';
 
 	let session: AuthSession = $page.data.session;
 	let loading = false;
-	let username: string | null = "User";
-	let avatarUrl: string | null = "https://www.w3schools.com/howto/img_avatar.png";
+	let username: string | null = 'User';
+	let avatarUrl: string | null = 'https://www.w3schools.com/howto/img_avatar.png';
 
 	let cards = [
 		{
@@ -102,67 +102,70 @@
 	}
 
 	const create = async () => {
-    	window.location.href = '/create';
-	}
+		window.location.href = '/create';
+	};
 
-    const edit = async () => {
-    	window.location.href = '/edit';
-	}
+	const edit = async () => {
+		window.location.href = '/edit';
+	};
 </script>
 
 <div class="flex min-h-[90vh] h-[100%-10vh] pt-[5%] bg-slate-200 ">
 	{#if loading}
-	<div class="mx-auto mt-[30vh] text-3xl">
-		<Loader />
-	</div>
+		<div class="mx-auto mt-[30vh] text-3xl">
+			<Loader />
+		</div>
 	{:else}
-	<div class="mx-auto h-fit w-[75vw] bg-white px-6 py-6 rounded-xl shadow-xl">
-		<!-- Top div with user avatar and name -->
-		<div class="flex flex-row items-center mb-4">
-			<div class="avatar">
-				<div class="w-12 rounded-full ring ring-red-400 ring-offset-base-100 ring-offset-2">
-					<img src={avatarUrl} alt="avatar" />
+		<div class="mx-auto h-fit w-[75vw] bg-white px-6 py-6 rounded-xl shadow-xl">
+			<!-- Top div with user avatar and name -->
+			<div class="flex flex-row items-center mb-4">
+				<div class="avatar">
+					<div class="w-12 rounded-full ring ring-red-400 ring-offset-base-100 ring-offset-2">
+						<img src={avatarUrl} alt="avatar" />
+					</div>
+				</div>
+				<h1 class="text-2xl ml-4">Welcome back {username}</h1>
+				<button class="btn ml-auto" on:click={signOut} disabled={loading}>Sign Out</button>
+			</div>
+			<!-- Middle div with movie cards -->
+			<div>
+				<h1 class="text-2xl mb-4">Your Movie Cards:</h1>
+				<div class="grid w-full justify-evenly grid-cols-3">
+					{#each cards as card}
+						<MovieCard movieName={card.name} movieDesc={card.desc} movieCover={card.cover} />
+					{/each}
 				</div>
 			</div>
-			<h1 class="text-2xl ml-4">Welcome back {username}</h1>
-			<button class="btn ml-auto" on:click={signOut} disabled={loading}>Sign Out</button>
-		</div>
-		<!-- Middle div with movie cards -->
-		<div>
-			<h1 class="text-2xl mb-4">Your Movie Cards:</h1>
-			<div class="grid w-full justify-evenly grid-cols-3">
-				{#each cards as card}
-					<MovieCard movieName={card.name} movieDesc={card.desc} movieCover={card.cover} />
-				{/each}
+			<!-- Bottom div with edit/update buttons -->
+			<div>
+				<a href="/create">
+					<button class="btn">Create new cards</button>
+				</a>
+				<a href="/edit">
+					<button class="btn" on:click={edit}>Edit your cards</button>
+				</a>
+				<button class="btn">Update your profile</button>
 			</div>
-		</div>
-		<!-- Bottom div with edit/update buttons -->
-		<div>
-			<button class="btn" on:click={create}>Create new cards</button>
-            <button class="btn" on:click={edit}>Edit your cards</button>
-			<button class="btn">Update your profile</button>
-		</div>
 
-		<form class="form-widget" on:submit|preventDefault={updateProfile}>
-			<div>
-				<label for="email">Email</label>
-				<input id="email" type="text" value={session.user.email} disabled />
-			</div>
-			<div>
-				<label for="username">Name</label>
-				<input id="username" type="text" bind:value={username} />
-			</div>
-	
-			<div>
-				<input
-					type="submit"
-					class="button block primary"
-					value={loading ? 'Loading...' : 'Update'}
-					disabled={loading}
-				/>
-			</div>
-		</form>
-	</div>
+			<form class="form-widget" on:submit|preventDefault={updateProfile}>
+				<div>
+					<label for="email">Email</label>
+					<input id="email" type="text" value={session.user.email} disabled />
+				</div>
+				<div>
+					<label for="username">Name</label>
+					<input id="username" type="text" bind:value={username} />
+				</div>
+
+				<div>
+					<input
+						type="submit"
+						class="button block primary"
+						value={loading ? 'Loading...' : 'Update'}
+						disabled={loading}
+					/>
+				</div>
+			</form>
+		</div>
 	{/if}
-	
 </div>

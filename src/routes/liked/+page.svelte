@@ -2,7 +2,6 @@
     const like_clicked = async () => {
     	window.location.href = '/liked';
 	}
-    
 </script>
 
 <style>
