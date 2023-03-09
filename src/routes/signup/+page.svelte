@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { supabase } from '$lib/supabaseClient';
 
-	let email: string | null = null;
-	let password: string | null = null;
-	let passwordConfirm: string | null = null;
+	let email: string = '';
+	let password: string = '';
+	let passwordConfirm: string = '';
 	let terms: boolean = false;
 	let status: number | null = null;
 	let loading: boolean = false;
@@ -75,11 +75,6 @@
 
 	const signup = async () => {
 		loading = true;
-		if (!email || !password) {
-			status = 500;
-			loading = false;
-			return;
-		}
 		status = null;
 		validEmail = isValidEmail(email);
 		validPassword = isValidPassword(password);
@@ -104,9 +99,9 @@
 			return;
 		}
 
-		email = null;
-		password = null;
-		passwordConfirm = null;
+		email = '';
+		password = '';
+		passwordConfirm = '';
 		terms = false;
 		status = 200;
 		loading = false;
