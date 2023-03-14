@@ -46,7 +46,7 @@
             {
                 event: 'INSERT',
                 schema: 'public',
-                table: 'messages',
+                table: 'clicking_messages',
             },
 			(payload) => {
 				store.update((old) => ({

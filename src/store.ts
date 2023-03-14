@@ -8,7 +8,7 @@ const defaultStore: Store = {
 };
 
 export type Store = {
-	user: User;
+	user: User | null;
 	msgs: Msg[];
 };
 
@@ -37,10 +37,10 @@ supabase.auth.onAuthStateChange((event, session) => {
 export default {
 	msg: {
 		send: async ({ username, text, owner }: { username: string; text: string; owner: string }) =>
-			await supabase.from('messages').insert([{ username, text, owner }]),
+			await supabase.from('clicking_messages').insert([{ username, text, owner }]),
 
 		getAll: async (): Promise<Msg[]> => {
-			const res = await supabase.from('messages').select().order('timestamp', {
+			const res = await supabase.from('clicking_messages').select().order('timestamp', {
 				ascending: true
 			});
 			if (res.data) {
